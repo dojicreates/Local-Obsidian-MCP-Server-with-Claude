@@ -1,7 +1,7 @@
 # Obsidian MCP Server
 
 > **Connect Claude Desktop directly to your Obsidian vault.**  
-> Ask Claude to read, write, search, and organise your notes — all from a single conversation.
+> Ask Claude to read, write, search, and organise your notes - all from a single conversation.
 
 ---
 
@@ -33,8 +33,8 @@ This server implements that standard and exposes your Obsidian vault as a set of
 Claude Desktop  ←──── MCP (stdio) ────→  server.py  ←── file I/O ──→  Obsidian Vault
 ```
 
-- Runs **100% locally** — no cloud service, no Obsidian plugin, no API keys
-- Claude can only access files inside your vault — nothing else on your machine
+- Runs **100% locally** - no cloud service, no Obsidian plugin, no API keys
+- Claude can only access files inside your vault - nothing else on your machine
 - Works on **Windows and macOS**
 
 ---
@@ -63,7 +63,7 @@ mcp/
 
 ## Setup (5 minutes)
 
-### Step 1 — Download this project
+### Step 1 - Download this project
 
 Click **Code → Download ZIP** on this page and extract it anywhere on your machine,  
 or clone it with git:
@@ -75,7 +75,7 @@ cd obsidian-mcp-server
 
 ---
 
-### Step 2 — Create the Python virtual environment
+### Step 2 - Create the Python virtual environment
 
 Open a terminal inside the project folder and run:
 
@@ -93,7 +93,7 @@ python3 -m venv .venv
 
 ---
 
-### Step 3 — Set your vault path
+### Step 3 - Set your vault path
 
 Open `config.json` and replace the placeholder with the real path to your Obsidian vault:
 
@@ -108,11 +108,11 @@ Open `config.json` and replace the placeholder with the real path to your Obsidi
 
 > Use forward slashes `/` even on Windows, or escape backslashes with `\\`.
 
-> `config.json` is listed in `.gitignore` — it will **not** be pushed to GitHub, keeping your personal path private.
+> `config.json` is listed in `.gitignore` - it will **not** be pushed to GitHub, keeping your personal path private.
 
 ---
 
-### Step 4 — Connect Claude Desktop
+### Step 4 - Connect Claude Desktop
 
 Claude Desktop reads its MCP server list from a config file.
 
@@ -160,7 +160,7 @@ On Windows: right-click the system tray icon → Quit, then relaunch.
 
 ---
 
-### Step 5 — Verify it works
+### Step 5 - Verify it works
 
 In Claude Desktop, start a new conversation and type:
 
@@ -170,7 +170,7 @@ or
 
 > "Show me the vault structure"
 
-You should see a tool icon appear in the chat interface — that means Claude is connected to your vault.
+You should see a tool icon appear in the chat interface - that means Claude is connected to your vault.
 
 ---
 
@@ -189,7 +189,7 @@ You should see a tool icon appear in the chat interface — that means Claude is
 | `get_or_create_daily_note(date?)` | Get today's daily note; creates it from a template if absent |
 
 All paths are **relative to the vault root**.  
-Example: `"Ideas/Project Alpha.md"` — not the full system path.
+Example: `"Ideas/Project Alpha.md"` - not the full system path.
 
 ---
 
@@ -227,7 +227,7 @@ The environment variable takes priority over `config.json`.
 
 ### Claude doesn't show the tool icon / server not found
 
-1. Double-check the paths in `claude_desktop_config.json` — use double backslashes `\\` on Windows.
+1. Double-check the paths in `claude_desktop_config.json` - use double backslashes `\\` on Windows.
 2. Make sure you fully quit Claude Desktop (not just closed the window) and relaunched it.
 3. Test the server manually by opening a terminal and running:
    ```
@@ -237,7 +237,7 @@ The environment variable takes priority over `config.json`.
    # macOS / Linux
    .venv/bin/python server.py
    ```
-   It should print nothing and wait — that means it is working. Press `Ctrl+C` to stop.
+   It should print nothing and wait - that means it is working. Press `Ctrl+C` to stop.
 
 ### "Vault path not set" error
 
@@ -250,7 +250,7 @@ Use `"Ideas/note.md"` not `"C:/Users/.../Ideas/note.md"`.
 
 ### Notes not showing up
 
-Make sure `vault_path` points to the **root** of your vault — the folder that contains the `.obsidian` hidden folder, not a subfolder inside it.
+Make sure `vault_path` points to the **root** of your vault - the folder that contains the `.obsidian` hidden folder, not a subfolder inside it.
 
 ### Re-installing dependencies
 
@@ -276,7 +276,7 @@ python3 -m venv .venv
 
 - Each function decorated with `@mcp.tool()` becomes a callable tool in Claude.
 - Claude Desktop launches `python server.py` as a child process when needed.
-- Communication happens over **stdin/stdout** using JSON-RPC — no network port is opened.
+- Communication happens over **stdin/stdout** using JSON-RPC - no network port is opened.
 - No authentication is required. Everything stays on your local machine.
 
 Built using Anthropic's official MCP Python SDK (FastMCP).
@@ -296,14 +296,14 @@ Claude Desktop
 ## Security
 
 - The server only accesses files **inside** your vault directory. Any path that tries to escape (e.g. `../../sensitive-file`) is blocked at the code level.
-- No data is sent anywhere — everything runs locally.
+- No data is sent anywhere - everything runs locally.
 - Claude cannot execute shell commands or access anything outside the vault.
 
 ---
 
 ## License
 
-MIT — free to use, modify, and distribute.
+MIT - free to use, modify, and distribute.
 
 ---
 
