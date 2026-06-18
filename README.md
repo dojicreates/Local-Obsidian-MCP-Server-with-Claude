@@ -279,6 +279,8 @@ python3 -m venv .venv
 - Communication happens over **stdin/stdout** using JSON-RPC — no network port is opened.
 - No authentication is required. Everything stays on your local machine.
 
+Built using Anthropic's official MCP Python SDK (FastMCP).
+
 ```
 Claude Desktop
   │
