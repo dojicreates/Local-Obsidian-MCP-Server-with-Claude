@@ -18,7 +18,7 @@ Watch the full step-by-step tutorial on YouTube:
 
 Want a printable, offline reference with screenshots for every step?
 
-**[Download the PDF Guide → dojicreates.com](https://dojicreates.com/)**
+**[Get the PDF Guide → dojicreates.com](https://dojicreates.com/)**
 
 The guide covers installation, configuration, and example prompts you can copy and use right away.
 
